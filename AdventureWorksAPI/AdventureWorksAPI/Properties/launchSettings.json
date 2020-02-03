@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "AdventureWorksAPI": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/departments/index",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5002"
+    }
+  }
+}
