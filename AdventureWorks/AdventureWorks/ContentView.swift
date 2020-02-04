@@ -18,16 +18,16 @@ struct ContentView: View {
 
 struct DepartmentsView: View {
     
-    @ObservedObject private var provider: DataProvider<Department>
+    @ObservedObject private var provider: ArrayDataProvider<Department>
     
-    init(provider: DataProvider<Department> = DepartmentsDataProvider())
+    init(provider: ArrayDataProvider<Department> = DepartmentsArrayDataProvider())
     {
         self.provider = provider
         self.provider.loadData()
     }
     
     var body: some View {
-        List(provider.fetchedData) { department in
+        List(provider.contents) { department in
             Text(department.name)
         }
     }

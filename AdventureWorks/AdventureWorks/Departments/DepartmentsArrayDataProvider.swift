@@ -10,12 +10,14 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-public class DepartmentsDataProvider: DataProvider<Department>
+public class DepartmentsArrayDataProvider: ArrayDataProvider<Department>
 {
     override func loadData(parameters: Dictionary<String, Any>? = nil)
     {
         guard let url = URL(string: "https://localhost:5002/api/departments/index") else {
-            super.updateFetchedData(items: [])
+            DispatchQueue.main.async {
+                self.contents = []
+            }
             return
         }
         
@@ -34,7 +36,7 @@ public class DepartmentsDataProvider: DataProvider<Department>
             }
             
             DispatchQueue.main.async {
-                super.updateFetchedData(items: items)
+                self.contents = items
             }
         }
     }

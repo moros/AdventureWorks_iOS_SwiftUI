@@ -16,9 +16,9 @@
 		712E410223E8B74C0057887C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712E410023E8B74C0057887C /* LaunchScreen.storyboard */; };
 		712E410D23E8B74C0057887C /* AdventureWorksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E410C23E8B74C0057887C /* AdventureWorksTests.swift */; };
 		712E411823E8B74C0057887C /* AdventureWorksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E411723E8B74C0057887C /* AdventureWorksUITests.swift */; };
-		712E412723E8B88D0057887C /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412623E8B88D0057887C /* DataProvider.swift */; };
+		712E412723E8B88D0057887C /* DataProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412623E8B88D0057887C /* DataProviders.swift */; };
 		712E412A23E8BC990057887C /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412923E8BC990057887C /* Department.swift */; };
-		712E412C23E8BD1A0057887C /* DepartmentsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412B23E8BD1A0057887C /* DepartmentsDataProvider.swift */; };
+		712E412C23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412B23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift */; };
 		712E412F23E8BE520057887C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 712E412E23E8BE520057887C /* Alamofire */; };
 		712E413223E8BE5C0057887C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 712E413123E8BE5C0057887C /* SwiftyJSON */; };
 		712E413423E8E4260057887C /* DataProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E413323E8E4250057887C /* DataProviderMock.swift */; };
@@ -57,9 +57,9 @@
 		712E411323E8B74C0057887C /* AdventureWorksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventureWorksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		712E411723E8B74C0057887C /* AdventureWorksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureWorksUITests.swift; sourceTree = "<group>"; };
 		712E411923E8B74C0057887C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		712E412623E8B88D0057887C /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		712E412623E8B88D0057887C /* DataProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviders.swift; sourceTree = "<group>"; };
 		712E412923E8BC990057887C /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
-		712E412B23E8BD1A0057887C /* DepartmentsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsDataProvider.swift; sourceTree = "<group>"; };
+		712E412B23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsArrayDataProvider.swift; sourceTree = "<group>"; };
 		712E413323E8E4250057887C /* DataProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +157,7 @@
 		712E412523E8B8590057887C /* DataProviders */ = {
 			isa = PBXGroup;
 			children = (
-				712E412623E8B88D0057887C /* DataProvider.swift */,
+				712E412623E8B88D0057887C /* DataProviders.swift */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				712E412923E8BC990057887C /* Department.swift */,
-				712E412B23E8BD1A0057887C /* DepartmentsDataProvider.swift */,
+				712E412B23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift */,
 			);
 			path = Departments;
 			sourceTree = "<group>";
@@ -311,9 +311,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				712E40F323E8B74A0057887C /* AppDelegate.swift in Sources */,
-				712E412C23E8BD1A0057887C /* DepartmentsDataProvider.swift in Sources */,
+				712E412C23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift in Sources */,
 				712E40F823E8B74A0057887C /* AdventureWorks.xcdatamodeld in Sources */,
-				712E412723E8B88D0057887C /* DataProvider.swift in Sources */,
+				712E412723E8B88D0057887C /* DataProviders.swift in Sources */,
 				712E40FA23E8B74A0057887C /* ContentView.swift in Sources */,
 				712E40F523E8B74A0057887C /* SceneDelegate.swift in Sources */,
 				712E412A23E8BC990057887C /* Department.swift in Sources */,
