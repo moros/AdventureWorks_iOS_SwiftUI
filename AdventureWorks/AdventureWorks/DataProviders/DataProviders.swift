@@ -14,7 +14,7 @@ import SwiftUI
 // context (NSManagedObjectContext like) data type that
 // provides easy access for querying/adding/updating data
 // by various views
-open class ArrayDataProvider<Item>: ObservableObject where Item : Hashable
+open class ArrayDataContext<Item>: ObservableObject where Item : Hashable
 {
     @Published public var contents: [Item] = []
     
@@ -29,21 +29,22 @@ open class ArrayDataProvider<Item>: ObservableObject where Item : Hashable
     func updateData(item: Item)
     {
     }
+    
+    func save()
+    {
+    }
 }
 
-open class ObjectDataProvider<Item>: ObservableObject where Item : Hashable
+open class ObjectDataContext<Item>: ObservableObject where Item : Hashable
 {
-    @Published public var fetchedData: Item?
+    @Published public var value: Item
     
-    func loadData(parameters: Dictionary<String, Any>? = nil)
+    init(value: Item)
     {
+        self.value = value
     }
     
-    func addData(data: Item)
-    {
-    }
-    
-    func updateData(data: Item)
+    func save()
     {
     }
 }

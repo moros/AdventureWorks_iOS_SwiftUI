@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-public class DepartmentsArrayDataProvider: ArrayDataProvider<Department>
+public class DepartmentsArrayDataContext: ArrayDataContext<Department>
 {
     override func loadData(parameters: Dictionary<String, Any>? = nil)
     {

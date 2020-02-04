@@ -18,9 +18,9 @@ struct ContentView: View {
 
 struct DepartmentsView: View {
     
-    @ObservedObject private var provider: ArrayDataProvider<Department>
+    @ObservedObject private var provider: ArrayDataContext<Department>
     
-    init(provider: ArrayDataProvider<Department> = DepartmentsArrayDataProvider())
+    init(provider: ArrayDataContext<Department> = DepartmentsArrayDataContext())
     {
         self.provider = provider
         self.provider.loadData()
