@@ -10,6 +10,10 @@ import Foundation
 import Combine
 import SwiftUI
 
+// In some respects looking to come up with some kind of
+// context (NSManagedObjectContext like) data type that
+// provides easy access for querying/adding/updating data
+// by various views
 open class ArrayDataProvider<Item>: ObservableObject where Item : Hashable
 {
     @Published public var contents: [Item] = []
