@@ -11,16 +11,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            DepartmentsView()
+            VStack {
+                DepartmentsView()
+            }
+            .navigationBarTitle(Text("Departments"))
+            .navigationBarItems(trailing: HStack {
+                NavigationLink(destination: DepartmentInputView()) {
+                    Text("Add")
+                }
+            })
         }
     }
 }
 
 struct DepartmentsView: View {
     
-    @ObservedObject private var provider: ArrayDataContext<Department>
+    @ObservedObject private var provider: ArrayContext<DepartmentResource, Department>
     
-    init(provider: ArrayDataContext<Department> = DepartmentsArrayDataContext())
+    init(provider: ArrayContext<DepartmentResource, Department> = ArrayContext<DepartmentResource, Department>())
     {
         self.provider = provider
         self.provider.loadData()
@@ -28,7 +36,32 @@ struct DepartmentsView: View {
     
     var body: some View {
         List(provider.contents) { department in
-            Text(department.name)
+            VStack(alignment: .leading) {
+                Text(department.name)
+                Text("last modified: \(department.modified)")
+            }
+        }
+    }
+}
+
+struct DepartmentInputView: View {
+    
+    @State private var name: String = ""
+    @State private var group: String = ""
+    
+    var body: some View {
+        VStack {
+            VStack {
+                Form {
+                    Section {
+                        TextField("Enter the departments name", text: $name)
+                    }
+                    Section {
+                        TextField("Enter the group name", text: $group)
+                    }
+                }
+            }
+            Spacer()
         }
     }
 }

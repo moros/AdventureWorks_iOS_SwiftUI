@@ -13,22 +13,7 @@ class ArrayDataContextMock<Item>: ArrayDataContext<Item> where Item : Hashable
 {
     init(items: [Item])
     {
+        super.init()
         self.contents = items
-    }
-    
-    override func loadData(parameters: Dictionary<String, Any>? = nil)
-    {
-    }
-    
-    override func addData(item: Item)
-    {
-    }
-    
-    override func updateData(item: Item)
-    {
-    }
-    
-    override func save()
-    {
     }
 }

@@ -16,12 +16,13 @@
 		712E410223E8B74C0057887C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712E410023E8B74C0057887C /* LaunchScreen.storyboard */; };
 		712E410D23E8B74C0057887C /* AdventureWorksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E410C23E8B74C0057887C /* AdventureWorksTests.swift */; };
 		712E411823E8B74C0057887C /* AdventureWorksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E411723E8B74C0057887C /* AdventureWorksUITests.swift */; };
-		712E412723E8B88D0057887C /* DataProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412623E8B88D0057887C /* DataProviders.swift */; };
+		712E412723E8B88D0057887C /* Contexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412623E8B88D0057887C /* Contexts.swift */; };
 		712E412A23E8BC990057887C /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412923E8BC990057887C /* Department.swift */; };
-		712E412C23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E412B23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift */; };
 		712E412F23E8BE520057887C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 712E412E23E8BE520057887C /* Alamofire */; };
 		712E413223E8BE5C0057887C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 712E413123E8BE5C0057887C /* SwiftyJSON */; };
 		712E413423E8E4260057887C /* DataProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E413323E8E4250057887C /* DataProviderMock.swift */; };
+		71C70AA523EB17AE00F9155A /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 71C70AA423EB17AE00F9155A /* ObjectMapper */; };
+		71C70AA723EB24E700F9155A /* ISODateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AA623EB24E700F9155A /* ISODateTransform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,10 +58,10 @@
 		712E411323E8B74C0057887C /* AdventureWorksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventureWorksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		712E411723E8B74C0057887C /* AdventureWorksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureWorksUITests.swift; sourceTree = "<group>"; };
 		712E411923E8B74C0057887C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		712E412623E8B88D0057887C /* DataProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviders.swift; sourceTree = "<group>"; };
+		712E412623E8B88D0057887C /* Contexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contexts.swift; sourceTree = "<group>"; };
 		712E412923E8BC990057887C /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
-		712E412B23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsArrayDataProvider.swift; sourceTree = "<group>"; };
 		712E413323E8E4250057887C /* DataProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderMock.swift; sourceTree = "<group>"; };
+		71C70AA623EB24E700F9155A /* ISODateTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISODateTransform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C70AA523EB17AE00F9155A /* ObjectMapper in Frameworks */,
 				712E413223E8BE5C0057887C /* SwiftyJSON in Frameworks */,
 				712E412F23E8BE520057887C /* Alamofire in Frameworks */,
 			);
@@ -114,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				712E412823E8BC880057887C /* Departments */,
-				712E412523E8B8590057887C /* DataProviders */,
+				712E412523E8B8590057887C /* Contexts */,
 				712E40F223E8B74A0057887C /* AppDelegate.swift */,
 				712E40F423E8B74A0057887C /* SceneDelegate.swift */,
 				712E40F923E8B74A0057887C /* ContentView.swift */,
@@ -154,19 +156,19 @@
 			path = AdventureWorksUITests;
 			sourceTree = "<group>";
 		};
-		712E412523E8B8590057887C /* DataProviders */ = {
+		712E412523E8B8590057887C /* Contexts */ = {
 			isa = PBXGroup;
 			children = (
-				712E412623E8B88D0057887C /* DataProviders.swift */,
+				712E412623E8B88D0057887C /* Contexts.swift */,
+				71C70AA623EB24E700F9155A /* ISODateTransform.swift */,
 			);
-			path = DataProviders;
+			path = Contexts;
 			sourceTree = "<group>";
 		};
 		712E412823E8BC880057887C /* Departments */ = {
 			isa = PBXGroup;
 			children = (
 				712E412923E8BC990057887C /* Department.swift */,
-				712E412B23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift */,
 			);
 			path = Departments;
 			sourceTree = "<group>";
@@ -190,6 +192,7 @@
 			packageProductDependencies = (
 				712E412E23E8BE520057887C /* Alamofire */,
 				712E413123E8BE5C0057887C /* SwiftyJSON */,
+				71C70AA423EB17AE00F9155A /* ObjectMapper */,
 			);
 			productName = AdventureWorks;
 			productReference = 712E40EF23E8B74A0057887C /* AdventureWorks.app */;
@@ -266,6 +269,7 @@
 			packageReferences = (
 				712E412D23E8BE520057887C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				712E413023E8BE5C0057887C /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				71C70AA323EB17AE00F9155A /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 			);
 			productRefGroup = 712E40F023E8B74A0057887C /* Products */;
 			projectDirPath = "";
@@ -311,11 +315,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				712E40F323E8B74A0057887C /* AppDelegate.swift in Sources */,
-				712E412C23E8BD1A0057887C /* DepartmentsArrayDataProvider.swift in Sources */,
 				712E40F823E8B74A0057887C /* AdventureWorks.xcdatamodeld in Sources */,
-				712E412723E8B88D0057887C /* DataProviders.swift in Sources */,
+				712E412723E8B88D0057887C /* Contexts.swift in Sources */,
 				712E40FA23E8B74A0057887C /* ContentView.swift in Sources */,
 				712E40F523E8B74A0057887C /* SceneDelegate.swift in Sources */,
+				71C70AA723EB24E700F9155A /* ISODateTransform.swift in Sources */,
 				712E412A23E8BC990057887C /* Department.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,6 +658,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		71C70AA323EB17AE00F9155A /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -666,6 +678,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 712E413023E8BE5C0057887C /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		71C70AA423EB17AE00F9155A /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71C70AA323EB17AE00F9155A /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 
