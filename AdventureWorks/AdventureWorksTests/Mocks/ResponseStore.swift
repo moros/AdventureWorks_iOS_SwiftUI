@@ -9,10 +9,9 @@
 import Foundation
 import Alamofire
 
-public protocol ResponseStore {
-    
+public protocol ResponseStore
+{
+    var error: Error? { get }
     func data(for: URLRequest) -> Data
-    
     func data(for: URL, withParameters params: Parameters?) -> Data
-    
 }

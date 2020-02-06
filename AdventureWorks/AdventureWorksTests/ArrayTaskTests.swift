@@ -12,7 +12,7 @@ import Alamofire
 
 class ArrayContextTests: XCTestCase
 {
-    func testArrayContextParsesResponseToExpectedModel()
+    func testArrayTaskParsesResponseToExpectedModel()
     {
         let rawJson = "[\n  {\n    \"group_name\" : \"Research and Development\",\n    \"modified_date\" : \"2008-04-30T00:00:00Z\",\n    \"name\" : \"Engineering\",\n    \"department_id\" : 1\n  }\n]".data(using: .utf8)
         
@@ -21,12 +21,22 @@ class ArrayContextTests: XCTestCase
         
         sut.loadData()
         
-        XCTAssertTrue(sut.contents.count == 1)
+        XCTAssertEqual(sut.contents.count, 1)
         XCTAssertEqual(sut.contents[0].id, 1)
         XCTAssertEqual(sut.contents[0].name, "Engineering")
         XCTAssertEqual(sut.contents[0].groupName, "Research and Development")
         
         let transform = ISODateTransform()
         XCTAssertEqual(transform.transformToJSON(sut.contents[0].modified), "2008-04-30T00:00:00Z")
+    }
+    
+    func testArrayTaskNoDataLoadedForError()
+    {
+        let manager = SessionManagerMock(responseStore: DefaultResponseStore(error: FakeError.unknown))
+        let sut = ArrayTask<DepartmentResource, Department>(manager: manager)
+        
+        sut.loadData()
+        
+        XCTAssertEqual(sut.contents.count, 0)
     }
 }

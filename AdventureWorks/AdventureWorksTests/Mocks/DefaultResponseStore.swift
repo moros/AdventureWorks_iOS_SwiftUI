@@ -12,10 +12,17 @@ import Alamofire
 public class DefaultResponseStore: ResponseStore
 {
     private var data: Data
+    public var error: Error?
     
-    public init(data: Data? = nil)
+    public init(data: Data? = nil, error: Error? = nil)
     {
         self.data = data ?? Data()
+        self.error = error
+    }
+    
+    public func error(for: URLRequest) -> Error?
+    {
+        return self.error
     }
     
     public func data(for request: URLRequest) -> Data
