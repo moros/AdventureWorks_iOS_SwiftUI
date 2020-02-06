@@ -29,14 +29,14 @@ public class SessionManagerMock: SessionManagerProtocol {
     {
         let url = try! urlConvertable.asURL()
         let data = responseStore.data(for: url, withParameters: parameters)
-        return MockDataRequest(data: data, error: self.responseStore.error)
+        return DataRequestMock(data: data, error: self.responseStore.error)
     }
     
     public func request(_ urlRequest: URLRequestConvertible) -> DataRequestProtocol
     {
         let request = try! urlRequest.asURLRequest()
         let data = responseStore.data(for: request)
-        return MockDataRequest(data: data, error: self.responseStore.error)
+        return DataRequestMock(data: data, error: self.responseStore.error)
     }
     
     @discardableResult
@@ -49,7 +49,7 @@ public class SessionManagerMock: SessionManagerProtocol {
     {
         let url = try! url.asURL()
         let data = responseStore.data(for: url, withParameters: parameters)
-        return MockDataRequest(data: data, error: self.responseStore.error)
+        return DataRequestMock(data: data, error: self.responseStore.error)
     }
     
     @discardableResult
@@ -58,7 +58,7 @@ public class SessionManagerMock: SessionManagerProtocol {
     {
         let request = try! urlRequest.asURLRequest()
         let data = responseStore.data(for: request)
-        return MockDataRequest(data: data, error: self.responseStore.error)
+        return DataRequestMock(data: data, error: self.responseStore.error)
     }
     
     @discardableResult

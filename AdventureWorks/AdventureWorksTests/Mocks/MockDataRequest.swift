@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 @testable import AdventureWorks
 
-public class MockDataRequest: DataRequestProtocol {
+public class DataRequestMock: DataRequestProtocol {
     
     let data: Data
     let error: Error?
