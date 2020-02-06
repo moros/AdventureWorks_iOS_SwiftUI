@@ -17,9 +17,16 @@ import ObjectMapper
 // context (NSManagedObjectContext like) data type that
 // provides easy access for querying/adding/updating data
 // by various views
-open class ArrayContext<Resource, Item>: ObservableObject where Item : Hashable, Item: BaseMappable
+open class ArrayTask<Resource, Item>: ObservableObject where Item : Hashable, Item: BaseMappable
 {
     @Published public var contents: [Item] = []
+    
+    private let manager: SessionManagerProtocol
+    
+    public init(manager: SessionManagerProtocol = SessionManager.default)
+    {
+        self.manager = manager
+    }
     
     // maybe makes more sense to be a requestable type
     // thinking it'll be less likely to need subclassing to allow for
@@ -38,7 +45,7 @@ open class ArrayContext<Resource, Item>: ObservableObject where Item : Hashable,
             return
         }
         
-        Alamofire.request(urlRequest).responseJSON { response in
+        self.manager.request(urlRequest).responseJSON { response in
             switch (response.result) {
             case .success(let data):
                 let json = JSON(data)
@@ -50,9 +57,7 @@ open class ArrayContext<Resource, Item>: ObservableObject where Item : Hashable,
                     print("Error mapping array of \(Item.self)s.")
                     break
                 }
-                DispatchQueue.main.async {
-                    self.contents = items
-                }
+                self.contents = items
             case .failure(let error):
                 print(error)
                 break
@@ -74,6 +79,7 @@ open class ArrayContext<Resource, Item>: ObservableObject where Item : Hashable,
     }
 }
 
+/// Still a work in progress; will probably refactor a bit!
 open class ObjectContext<Item>: ObservableObject where Item : Hashable
 {
     @Published public var value: Item

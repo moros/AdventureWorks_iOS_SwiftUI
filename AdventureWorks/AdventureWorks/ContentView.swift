@@ -26,16 +26,16 @@ struct ContentView: View {
 
 struct DepartmentsView: View {
     
-    @ObservedObject private var provider: ArrayContext<DepartmentResource, Department>
+    @ObservedObject private var task: ArrayTask<DepartmentResource, Department>
     
-    init(provider: ArrayContext<DepartmentResource, Department> = ArrayContext<DepartmentResource, Department>())
+    init(task: ArrayTask<DepartmentResource, Department> = ArrayTask<DepartmentResource, Department>())
     {
-        self.provider = provider
-        self.provider.loadData()
+        self.task = task
+        self.task.loadData()
     }
     
     var body: some View {
-        List(provider.contents) { department in
+        List(task.contents) { department in
             VStack(alignment: .leading) {
                 Text(department.name)
                 Text("last modified: \(department.modified)")
