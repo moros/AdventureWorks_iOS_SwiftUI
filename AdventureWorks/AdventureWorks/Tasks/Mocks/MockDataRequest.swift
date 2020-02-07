@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-@testable import AdventureWorks
 
 public class DataRequestMock: DataRequestProtocol {
     

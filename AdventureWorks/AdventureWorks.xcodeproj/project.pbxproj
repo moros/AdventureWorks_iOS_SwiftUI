@@ -20,14 +20,15 @@
 		712E412F23E8BE520057887C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 712E412E23E8BE520057887C /* Alamofire */; };
 		712E413223E8BE5C0057887C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 712E413123E8BE5C0057887C /* SwiftyJSON */; };
 		712E413423E8E4260057887C /* ArrayTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E413323E8E4250057887C /* ArrayTaskMock.swift */; };
+		7182B0C523EDB90D00E38D5C /* MockDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C123EDB90D00E38D5C /* MockDataRequest.swift */; };
+		7182B0C623EDB90D00E38D5C /* ResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C223EDB90D00E38D5C /* ResponseStore.swift */; };
+		7182B0C723EDB90D00E38D5C /* SessionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C323EDB90D00E38D5C /* SessionManagerMock.swift */; };
+		7182B0C823EDB90D00E38D5C /* DefaultResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C423EDB90D00E38D5C /* DefaultResponseStore.swift */; };
+		7182B0CA23EDBD6000E38D5C /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C923EDBD6000E38D5C /* FakeData.swift */; };
 		718D91BD23EC6B670023E047 /* FakeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718D91BC23EC6B670023E047 /* FakeError.swift */; };
 		71C70AA523EB17AE00F9155A /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 71C70AA423EB17AE00F9155A /* ObjectMapper */; };
 		71C70AA723EB24E700F9155A /* ISODateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AA623EB24E700F9155A /* ISODateTransform.swift */; };
 		71C70AB423EB7AEB00F9155A /* ArrayTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AB323EB7AEB00F9155A /* ArrayTaskTests.swift */; };
-		71C70AB823EB850700F9155A /* DefaultResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AB723EB850700F9155A /* DefaultResponseStore.swift */; };
-		71C70ABA23EB851700F9155A /* MockDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AB923EB851700F9155A /* MockDataRequest.swift */; };
-		71C70ABC23EB852A00F9155A /* SessionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70ABB23EB852A00F9155A /* SessionManagerMock.swift */; };
-		71C70ABE23EB853700F9155A /* ResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70ABD23EB853700F9155A /* ResponseStore.swift */; };
 		71C70AC123EB892A00F9155A /* SessionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70ABF23EB854500F9155A /* SessionManagerProtocol.swift */; };
 		71C70AC223EB896900F9155A /* DataRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AB523EB84F900F9155A /* DataRequestProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -67,14 +68,15 @@
 		712E412623E8B88D0057887C /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		712E412923E8BC990057887C /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		712E413323E8E4250057887C /* ArrayTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTaskMock.swift; sourceTree = "<group>"; };
+		7182B0C123EDB90D00E38D5C /* MockDataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDataRequest.swift; sourceTree = "<group>"; };
+		7182B0C223EDB90D00E38D5C /* ResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStore.swift; sourceTree = "<group>"; };
+		7182B0C323EDB90D00E38D5C /* SessionManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerMock.swift; sourceTree = "<group>"; };
+		7182B0C423EDB90D00E38D5C /* DefaultResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultResponseStore.swift; sourceTree = "<group>"; };
+		7182B0C923EDBD6000E38D5C /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 		718D91BC23EC6B670023E047 /* FakeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeError.swift; sourceTree = "<group>"; };
 		71C70AA623EB24E700F9155A /* ISODateTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISODateTransform.swift; sourceTree = "<group>"; };
 		71C70AB323EB7AEB00F9155A /* ArrayTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTaskTests.swift; sourceTree = "<group>"; };
 		71C70AB523EB84F900F9155A /* DataRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestProtocol.swift; sourceTree = "<group>"; };
-		71C70AB723EB850700F9155A /* DefaultResponseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultResponseStore.swift; sourceTree = "<group>"; };
-		71C70AB923EB851700F9155A /* MockDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataRequest.swift; sourceTree = "<group>"; };
-		71C70ABB23EB852A00F9155A /* SessionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerMock.swift; sourceTree = "<group>"; };
-		71C70ABD23EB853700F9155A /* ResponseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseStore.swift; sourceTree = "<group>"; };
 		71C70ABF23EB854500F9155A /* SessionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 		712E412523E8B8590057887C /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				7182B0C023EDB87A00E38D5C /* Mocks */,
 				712E412623E8B88D0057887C /* Tasks.swift */,
 				71C70AA623EB24E700F9155A /* ISODateTransform.swift */,
 				71C70AB523EB84F900F9155A /* DataRequestProtocol.swift */,
@@ -190,13 +193,21 @@
 			path = Departments;
 			sourceTree = "<group>";
 		};
+		7182B0C023EDB87A00E38D5C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7182B0C423EDB90D00E38D5C /* DefaultResponseStore.swift */,
+				7182B0C123EDB90D00E38D5C /* MockDataRequest.swift */,
+				7182B0C223EDB90D00E38D5C /* ResponseStore.swift */,
+				7182B0C323EDB90D00E38D5C /* SessionManagerMock.swift */,
+				7182B0C923EDBD6000E38D5C /* FakeData.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		71C70AAC23EB74BD00F9155A /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				71C70AB723EB850700F9155A /* DefaultResponseStore.swift */,
-				71C70AB923EB851700F9155A /* MockDataRequest.swift */,
-				71C70ABB23EB852A00F9155A /* SessionManagerMock.swift */,
-				71C70ABD23EB853700F9155A /* ResponseStore.swift */,
 				718D91BC23EC6B670023E047 /* FakeError.swift */,
 			);
 			path = Mocks;
@@ -346,8 +357,13 @@
 				71C70AC123EB892A00F9155A /* SessionManagerProtocol.swift in Sources */,
 				712E40F323E8B74A0057887C /* AppDelegate.swift in Sources */,
 				712E40F823E8B74A0057887C /* AdventureWorks.xcdatamodeld in Sources */,
+				7182B0C523EDB90D00E38D5C /* MockDataRequest.swift in Sources */,
+				7182B0C723EDB90D00E38D5C /* SessionManagerMock.swift in Sources */,
 				712E412723E8B88D0057887C /* Tasks.swift in Sources */,
+				7182B0CA23EDBD6000E38D5C /* FakeData.swift in Sources */,
+				7182B0C623EDB90D00E38D5C /* ResponseStore.swift in Sources */,
 				712E40FA23E8B74A0057887C /* ContentView.swift in Sources */,
+				7182B0C823EDB90D00E38D5C /* DefaultResponseStore.swift in Sources */,
 				712E40F523E8B74A0057887C /* SceneDelegate.swift in Sources */,
 				71C70AA723EB24E700F9155A /* ISODateTransform.swift in Sources */,
 				712E412A23E8BC990057887C /* Department.swift in Sources */,
@@ -360,12 +376,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				712E413423E8E4260057887C /* ArrayTaskMock.swift in Sources */,
-				71C70ABA23EB851700F9155A /* MockDataRequest.swift in Sources */,
-				71C70ABE23EB853700F9155A /* ResponseStore.swift in Sources */,
-				71C70ABC23EB852A00F9155A /* SessionManagerMock.swift in Sources */,
 				718D91BD23EC6B670023E047 /* FakeError.swift in Sources */,
 				71C70AB423EB7AEB00F9155A /* ArrayTaskTests.swift in Sources */,
-				71C70AB823EB850700F9155A /* DefaultResponseStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

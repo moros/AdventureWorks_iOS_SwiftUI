@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                DepartmentsView()
+                DepartmentsView(task: ArrayTask<DepartmentResource, Department>(manager: injectMockSessionManager()))
             }
             .navigationBarTitle(Text("Departments"))
             .navigationBarItems(trailing: HStack {
@@ -21,6 +21,12 @@ struct ContentView: View {
                 }
             })
         }
+    }
+    
+    func injectMockSessionManager() -> SessionManagerProtocol
+    {
+        let responseStore = DefaultResponseStore(data: FakeData.fakeDepartmentListData())
+        return SessionManagerMock(responseStore: responseStore)
     }
 }
 
