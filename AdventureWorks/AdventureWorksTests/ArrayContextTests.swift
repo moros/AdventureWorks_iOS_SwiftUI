@@ -21,13 +21,13 @@ class ArrayContextTests: XCTestCase
         
         sut.loadData()
         
-        XCTAssertEqual(sut.contents.count, 1)
-        XCTAssertEqual(sut.contents[0].id, 1)
-        XCTAssertEqual(sut.contents[0].name, "Engineering")
-        XCTAssertEqual(sut.contents[0].groupName, "Research and Development")
+        XCTAssertEqual(sut.array.count, 1)
+        XCTAssertEqual(sut.array[0].id, 1)
+        XCTAssertEqual(sut.array[0].name, "Engineering")
+        XCTAssertEqual(sut.array[0].groupName, "Research and Development")
         
         let transform = ISODateTransform()
-        XCTAssertEqual(transform.transformToJSON(sut.contents[0].modified), "2008-04-30T00:00:00Z")
+        XCTAssertEqual(transform.transformToJSON(sut.array[0].modified), "2008-04-30T00:00:00Z")
     }
     
     func testArrayContextNoDataLoadedForError()
@@ -37,6 +37,6 @@ class ArrayContextTests: XCTestCase
         
         sut.loadData()
         
-        XCTAssertEqual(sut.contents.count, 0)
+        XCTAssertEqual(sut.array.count, 0)
     }
 }

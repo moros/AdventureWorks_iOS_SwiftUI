@@ -123,4 +123,19 @@ class ObjectContextTests: XCTestCase
         
         wait(for: [expectation], timeout: 1)
     }
+    
+    func test_context_backingObjectShouldBackToOriginal_whenCancelled()
+    {
+        let sut = ObjectContext<DepartmentResource, Department>(manager: self.managerMock, value: department)
+        sut.resource = self.resourceMock
+        department.name = "Engineering"
+        
+        let expectation = XCTestExpectation(description: "Backing object should be back to original state.")
+        sut.cancel {
+            XCTAssertFalse(sut.isDirty())
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }

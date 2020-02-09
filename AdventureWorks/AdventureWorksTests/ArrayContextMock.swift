@@ -15,6 +15,6 @@ class ArrayContextMock<Resource, Item>: ArrayContext<Resource, Item> where Item 
     init(items: [Item])
     {
         super.init()
-        self.contents = items
+        self.array = items
     }
 }
