@@ -131,10 +131,9 @@ class ObjectContextTests: XCTestCase
         department.name = "Engineering"
         
         let expectation = XCTestExpectation(description: "Backing object should be back to original state.")
-        sut.cancel {
-            XCTAssertFalse(sut.isDirty())
-            expectation.fulfill()
-        }
+        sut.cancel()
+        XCTAssertFalse(sut.isDirty())
+        expectation.fulfill()
         
         wait(for: [expectation], timeout: 1)
     }

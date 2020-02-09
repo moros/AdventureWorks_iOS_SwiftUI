@@ -38,10 +38,9 @@ class ObjectContext<Resource, Item> where Item : Equatable, Item : Copyable, Ite
         self.resource = klass.init()
     }
     
-    func cancel(cancelled: @escaping (() -> Void))
+    func cancel()
     {
         self.value = self.original.copy() as! Item
-        cancelled()
     }
     
     func save(onCompletion: @escaping ((SaveState) -> Void))
