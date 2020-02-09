@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 @testable import AdventureWorks
 
-class ArrayTaskMock<Resource, Item>: ArrayTask<Resource, Item> where Item : Hashable, Item : BaseMappable
+class ArrayContextMock<Resource, Item>: ArrayContext<Resource, Item> where Item : Equatable, Item : Copyable, Item : Trackable, Item: BaseMappable
 {
     init(items: [Item])
     {

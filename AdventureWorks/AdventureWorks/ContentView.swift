@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                DepartmentsView(task: ArrayTask<DepartmentResource, Department>(manager: injectMockSessionManager()))
+                DepartmentsView(context: ArrayContext<DepartmentResource, Department>(manager: injectMockSessionManager()))
             }
             .navigationBarTitle(Text("Departments"))
             .navigationBarItems(trailing: HStack {
@@ -32,19 +32,19 @@ struct ContentView: View {
 
 struct DepartmentsView: View {
     
-    @ObservedObject private var task: ArrayTask<DepartmentResource, Department>
+    @ObservedObject private var context: ArrayContext<DepartmentResource, Department>
     
-    init(task: ArrayTask<DepartmentResource, Department> = ArrayTask<DepartmentResource, Department>())
+    init(context: ArrayContext<DepartmentResource, Department> = ArrayContext<DepartmentResource, Department>())
     {
-        self.task = task
-        self.task.loadData()
+        self.context = context
+        self.context.loadData()
     }
     
     var body: some View {
-        List(task.contents) { department in
+        List(context.array) { department in
             VStack(alignment: .leading) {
-                Text(department.name)
-                Text("last modified: \(department.modified)")
+                Text("\(department.name!)")
+                Text("last modified: \(department.modified!)")
             }
         }
     }
