@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-class Department: Trackable, Copyable, Equatable, Identifiable, ImmutableMappable
+class Department: Trackable, Copyable, Restorable, Equatable, Identifiable, ImmutableMappable
 {
     typealias Item = Department
     
@@ -55,6 +55,13 @@ class Department: Trackable, Copyable, Equatable, Identifiable, ImmutableMappabl
     func copy() -> Department
     {
         return Department(isNew: self.isNew, name: self.name)
+    }
+    
+    func restore(_ item: Department)
+    {
+        self.name = item.name
+        self.groupName = item.groupName
+        self.modified = item.modified
     }
 }
 

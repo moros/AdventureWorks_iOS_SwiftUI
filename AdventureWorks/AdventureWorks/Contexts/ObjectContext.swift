@@ -16,7 +16,7 @@ public enum SaveState
     case failed
 }
 
-class ObjectContext<Resource, Item> where Item : Equatable, Item : Copyable, Item : Trackable
+class ObjectContext<Resource, Item> where Item : Equatable, Item : Copyable, Item : Trackable, Item : Restorable
 {
     public var value: Item
     public var resource: ResourceConvertible<Item>!
@@ -38,9 +38,12 @@ class ObjectContext<Resource, Item> where Item : Equatable, Item : Copyable, Ite
         self.resource = klass.init()
     }
     
+    /// Resets value back to its original without changing the reference.
+    /// This will be important when a component or controller has a reference
+    /// to the object.
     func cancel()
     {
-        self.value = self.original.copy() as! Item
+        self.value.restore(self.original as! Item.Item)
     }
     
     func save(onCompletion: @escaping ((SaveState) -> Void))

@@ -132,7 +132,13 @@ class ObjectContextTests: XCTestCase
         
         let expectation = XCTestExpectation(description: "Backing object should be back to original state.")
         sut.cancel()
+        
+        // Our context shouldn't be dirty anymore.
         XCTAssertFalse(sut.isDirty())
+        
+        // The references between the object we passed to the context
+        // and the value stored in the context should still be the same.
+        XCTAssertTrue(department == sut.value)
         expectation.fulfill()
         
         wait(for: [expectation], timeout: 1)

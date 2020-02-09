@@ -20,6 +20,7 @@
 		712E412F23E8BE520057887C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 712E412E23E8BE520057887C /* Alamofire */; };
 		712E413223E8BE5C0057887C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 712E413123E8BE5C0057887C /* SwiftyJSON */; };
 		712E413423E8E4260057887C /* ArrayContextMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E413323E8E4250057887C /* ArrayContextMock.swift */; };
+		715B830123F09A15005567A8 /* Restorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B830023F09A15005567A8 /* Restorable.swift */; };
 		7182B0C523EDB90D00E38D5C /* DataRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C123EDB90D00E38D5C /* DataRequestMock.swift */; };
 		7182B0C623EDB90D00E38D5C /* ResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C223EDB90D00E38D5C /* ResponseStore.swift */; };
 		7182B0C723EDB90D00E38D5C /* SessionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C323EDB90D00E38D5C /* SessionManagerMock.swift */; };
@@ -74,6 +75,7 @@
 		712E412623E8B88D0057887C /* ArrayContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayContext.swift; sourceTree = "<group>"; };
 		712E412923E8BC990057887C /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		712E413323E8E4250057887C /* ArrayContextMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayContextMock.swift; sourceTree = "<group>"; };
+		715B830023F09A15005567A8 /* Restorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restorable.swift; sourceTree = "<group>"; };
 		7182B0C123EDB90D00E38D5C /* DataRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequestMock.swift; sourceTree = "<group>"; };
 		7182B0C223EDB90D00E38D5C /* ResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStore.swift; sourceTree = "<group>"; };
 		7182B0C323EDB90D00E38D5C /* SessionManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerMock.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				712E412623E8B88D0057887C /* ArrayContext.swift */,
 				71C16AA223EFC55600E7D57F /* ObjectContext.swift */,
 				71C16AA523EFC5B600E7D57F /* Copyable.swift */,
+				715B830023F09A15005567A8 /* Restorable.swift */,
 				71C16AA723EFC5D900E7D57F /* ResourceConvertible.swift */,
 			);
 			path = Contexts;
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C70AC123EB892A00F9155A /* SessionManagerProtocol.swift in Sources */,
+				715B830123F09A15005567A8 /* Restorable.swift in Sources */,
 				712E40F323E8B74A0057887C /* AppDelegate.swift in Sources */,
 				712E40F823E8B74A0057887C /* AdventureWorks.xcdatamodeld in Sources */,
 				7182B0C523EDB90D00E38D5C /* DataRequestMock.swift in Sources */,
