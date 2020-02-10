@@ -18,13 +18,15 @@ public class DataRequestMock: DataRequestProtocol {
     
     let request: URLRequest?
     let response: HTTPURLResponse?
+    let propertyListResponse: DataResponse<Any>?
     
-    public init(data: Data? = nil, error: Error? = nil, request: URLRequest? = nil, response: HTTPURLResponse? = nil)
+    public init(data: Data? = nil, error: Error? = nil, request: URLRequest? = nil, response: HTTPURLResponse? = nil, propertyListResponse: DataResponse<Any>? = nil)
     {
         self.data = data
         self.error = error
         self.request = request
         self.response = response
+        self.propertyListResponse = propertyListResponse
     }
     
     @discardableResult
@@ -38,17 +40,23 @@ public class DataRequestMock: DataRequestProtocol {
     
     @discardableResult
     public func responseData(queue: DispatchQueue?,
-                             completionHandler: @escaping (DataResponse<Data>) -> Void) -> Self {
-        // TODO: ...
-        fatalError("responseData(queue:completionHandler:) has not been implemented")
+                             completionHandler: @escaping (DataResponse<Data>) -> Void) -> Self
+    {
+        let result = self.error == nil ? Result.success(self.data!) : Result.failure(self.error!)
+        let response = DataResponse<Data>(request: self.request, response: self.response, data: self.data, result: result)
+        completionHandler(response)
+        return self
     }
     
     @discardableResult
     public func responseString(queue: DispatchQueue?,
                                encoding: String.Encoding?,
-                               completionHandler: @escaping (DataResponse<String>) -> Void) -> Self {
-        // TODO: ...
-        fatalError("responseString(queue:encoding:completionHandler:) has not been implemented")
+                               completionHandler: @escaping (DataResponse<String>) -> Void) -> Self
+    {
+        let result = self.error == nil ? Result.success(String(decoding: self.data!, as: UTF8.self)) : Result.failure(self.error!)
+        let response = DataResponse<String>(request: self.request, response: self.response, data: self.data, result: result)
+        completionHandler(response)
+        return self
     }
     
     @discardableResult
@@ -59,7 +67,7 @@ public class DataRequestMock: DataRequestProtocol {
         let result = Result {
             return try convertToJsonObject(with: data!, options: options, error: error)
         }
-        let dataResponse = DataResponse(request: nil, response: nil, data: data, result: result)
+        let dataResponse = DataResponse(request: self.request, response: self.response, data: data, result: result)
         completionHandler(dataResponse)
         return self
     }
@@ -67,18 +75,26 @@ public class DataRequestMock: DataRequestProtocol {
     @discardableResult
     public func responsePropertyList(queue: DispatchQueue?,
                                      options: PropertyListSerialization.ReadOptions,
-                                     completionHandler: @escaping (DataResponse<Any>) -> Void) -> Self {
-        // TODO: ...
-        fatalError("responsePropertyList(queue:options:completionHandler:) has not been implemented")
+                                     completionHandler: @escaping (DataResponse<Any>) -> Void) -> Self
+    {
+        // Cheating a bit by having the mock take in a data response dependency!
+        guard let propListResponse = propertyListResponse else {
+            fatalError("responsePropertyList(queue:options:completionHandler:) failed; mocked response not passed in.")
+        }
+        
+        completionHandler(propListResponse)
+        return self
     }
     
-    public func cancel() {
+    public func cancel()
+    {
         fatalError("cancel() has not been implemented")
     }
     
     // TODO: May need to move this to a MockDownloadRequest class
     @discardableResult
-    public func downloadProgress(queue: DispatchQueue, closure: @escaping Request.ProgressHandler) -> Self {
+    public func downloadProgress(queue: DispatchQueue, closure: @escaping Request.ProgressHandler) -> Self
+    {
         fatalError("downloadProgress(queue: queue, closure: closure) has not been implemented")
     }
     

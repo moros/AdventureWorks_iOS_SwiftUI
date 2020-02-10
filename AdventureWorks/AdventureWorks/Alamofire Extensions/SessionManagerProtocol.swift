@@ -58,14 +58,14 @@ public protocol SessionManagerProtocol
         method: HTTPMethod,
         headers: HTTPHeaders?,
         queue: DispatchQueue?,
-        encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Void)?)
+        encodingCompletion: ((MultipartFormDataResult) -> Void)?)
     
     func upload(
         multipartFormData: @escaping (MultipartFormData) -> Void,
         usingThreshold encodingMemoryThreshold: UInt64,
         with urlRequest: URLRequestConvertible,
         queue: DispatchQueue?,
-        encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Void)?)
+        encodingCompletion: ((MultipartFormDataResult) -> Void)?)
 }
 
 public extension SessionManagerProtocol
@@ -149,7 +149,7 @@ public extension SessionManagerProtocol
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil,
         queue: DispatchQueue? = nil,
-        encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Void)?)
+        encodingCompletion: ((MultipartFormDataResult) -> Void)?)
     {
         return upload(
             multipartFormData: multipartFormData,
@@ -167,7 +167,7 @@ public extension SessionManagerProtocol
         usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold,
         with urlRequest: URLRequestConvertible,
         queue: DispatchQueue? = nil,
-        encodingCompletion: ((SessionManager.MultipartFormDataEncodingResult) -> Void)?)
+        encodingCompletion: ((MultipartFormDataResult) -> Void)?)
     {
         return upload(
             multipartFormData: multipartFormData,
@@ -267,5 +267,79 @@ extension SessionManager: SessionManagerProtocol
     {
         let request: UploadRequest = upload(stream, with: urlRequest)
         return request as UploadRequestProtocol
+    }
+    
+    public func upload(
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold,
+        to url: URLConvertible,
+        method: HTTPMethod = .post,
+        headers: HTTPHeaders? = nil,
+        queue: DispatchQueue? = nil,
+        encodingCompletion: ((MultipartFormDataResult) -> Void)?)
+    {
+        let callback: ((SessionManager.MultipartFormDataEncodingResult) -> Void) = { result in
+            guard let completion = encodingCompletion else {
+                return
+            }
+            
+            let encodedResult: MultipartFormDataResult!
+            switch result {
+            case .success(let request, let fromDisk, let url):
+                encodedResult = MultipartFormDataResult.success(
+                    request: request as UploadRequestProtocol,
+                    streamingFromDisk: fromDisk,
+                    streamFileURL: url
+                )
+            case .failure(let error):
+                encodedResult = MultipartFormDataResult.failure(error)
+            }
+            
+            completion(encodedResult)
+        }
+        return upload(
+            multipartFormData: multipartFormData,
+            usingThreshold: encodingMemoryThreshold,
+            to: url,
+            method: method,
+            headers: headers,
+            queue: queue,
+            encodingCompletion: callback
+        )
+    }
+    
+    public func upload(
+        multipartFormData: @escaping (MultipartFormData) -> Void,
+        usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold,
+        with urlRequest: URLRequestConvertible,
+        queue: DispatchQueue? = nil,
+        encodingCompletion: ((MultipartFormDataResult) -> Void)?)
+    {
+        let callback: ((SessionManager.MultipartFormDataEncodingResult) -> Void) = { result in
+            guard let completion = encodingCompletion else {
+                return
+            }
+            
+            let encodedResult: MultipartFormDataResult!
+            switch result {
+            case .success(let request, let fromDisk, let url):
+                encodedResult = MultipartFormDataResult.success(
+                    request: request as UploadRequestProtocol,
+                    streamingFromDisk: fromDisk,
+                    streamFileURL: url
+                )
+            case .failure(let error):
+                encodedResult = MultipartFormDataResult.failure(error)
+            }
+            
+            completion(encodedResult)
+        }
+        return upload(
+            multipartFormData: multipartFormData,
+            usingThreshold: encodingMemoryThreshold,
+            with: urlRequest,
+            queue: queue,
+            encodingCompletion: callback
+        )
     }
 }
