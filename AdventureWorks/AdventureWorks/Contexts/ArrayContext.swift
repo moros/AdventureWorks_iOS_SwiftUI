@@ -18,7 +18,7 @@ import ObjectMapper
 // context (NSManagedObjectContext like) data type that
 // provides easy access for querying/adding/updating data
 // by various views
-class ArrayContext<Resource, Item>: ObservableObject where Item : Equatable, Item : Copyable, Item : Trackable, Item: BaseMappable
+class ArrayContext<Resource, Item>: ObservableObject where Item : Equatable, Item : Trackable, Item: BaseMappable
 {
     @Published public var array: [Item] = []
     

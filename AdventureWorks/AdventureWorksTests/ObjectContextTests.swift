@@ -51,7 +51,7 @@ class ObjectContextTests: XCTestCase
     func test_objectContext_isDirtySetToTrue_whenChildPropertyChanged()
     {
         let sut = ObjectContext<DepartmentResource, Department>(value: self.department)
-        self.department.name = "Engineering"
+        sut.value.name = "Engineering"
         
         XCTAssertTrue(sut.isDirty())
     }
@@ -96,7 +96,7 @@ class ObjectContextTests: XCTestCase
         
         let sut = ObjectContext<DepartmentResource, Department>(manager: self.managerMock, value: department)
         sut.resource = self.resourceMock
-        department.name = "Engineering"
+        sut.value.name = "Engineering"
         
         let expectation = XCTestExpectation(description: "Save's func onCompletion closure called with successful state returned.")
         sut.save { state in
@@ -113,7 +113,7 @@ class ObjectContextTests: XCTestCase
         
         let sut = ObjectContext<DepartmentResource, Department>(manager: self.managerMock, value: department)
         sut.resource = self.resourceMock
-        department.name = "Engineering"
+        sut.value.name = "Engineering"
         
         let expectation = XCTestExpectation(description: "Save's func onCompletion closure called with failed state returned.")
         sut.save { state in
@@ -128,7 +128,7 @@ class ObjectContextTests: XCTestCase
     {
         let sut = ObjectContext<DepartmentResource, Department>(manager: self.managerMock, value: department)
         sut.resource = self.resourceMock
-        department.name = "Engineering"
+        sut.value.name = "Engineering"
         
         let expectation = XCTestExpectation(description: "Backing object should be back to original state.")
         sut.cancel()

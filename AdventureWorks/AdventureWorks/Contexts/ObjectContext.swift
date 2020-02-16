@@ -17,7 +17,7 @@ public enum SaveState
     case failed
 }
 
-class ObjectContext<Resource, Item> where Item : Equatable, Item : Copyable, Item : Trackable, Item : Restorable
+class ObjectContext<Resource, Item> where Item : Equatable, Item : Trackable
 {
     public var value: Item
     public var resource: ResourceConvertible<Item>!
@@ -29,7 +29,7 @@ class ObjectContext<Resource, Item> where Item : Equatable, Item : Copyable, Ite
     {
         self.manager = manager
         self.value = value
-        self.original = value.copy() as! Item
+        self.original = value
         
         guard let klass = Resource.self as? ResourceConvertible<Item>.Type else {
             print("Error grabbing class type for Resource<Item>.")
@@ -39,12 +39,9 @@ class ObjectContext<Resource, Item> where Item : Equatable, Item : Copyable, Ite
         self.resource = klass.init()
     }
     
-    /// Resets value back to its original without changing the reference.
-    /// This will be important when a component or controller has a reference
-    /// to the object.
     func cancel()
     {
-        self.value.restore(self.original as! Item.Item)
+        self.value = self.original
     }
     
     func save(onCompletion: @escaping ((SaveState) -> Void))

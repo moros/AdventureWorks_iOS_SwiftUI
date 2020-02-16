@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-class Department: Trackable, Copyable, Restorable, Equatable, Identifiable, ImmutableMappable
+struct Department: Trackable, Equatable, Identifiable, ImmutableMappable
 {
     typealias Item = Department
     
@@ -33,7 +33,7 @@ class Department: Trackable, Copyable, Restorable, Equatable, Identifiable, Immu
         self.id = 0
     }
     
-    required public init(map: Map) throws
+    public init(map: Map) throws
     {
         isNew = false
         id = try map.value("department_id")
@@ -50,18 +50,6 @@ class Department: Trackable, Copyable, Restorable, Equatable, Identifiable, Immu
     static func != (lhs: Department, rhs: Department) -> Bool
     {
         return !(lhs == rhs)
-    }
-    
-    func copy() -> Department
-    {
-        return Department(isNew: self.isNew, name: self.name)
-    }
-    
-    func restore(_ item: Department)
-    {
-        self.name = item.name
-        self.groupName = item.groupName
-        self.modified = item.modified
     }
 }
 
