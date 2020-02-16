@@ -11,6 +11,24 @@
         }
       },
       {
+        "package": "AlamofireExtended",
+        "repositoryURL": "https://github.com/moros/AlamofireExtended.git",
+        "state": {
+          "branch": null,
+          "revision": "d5a45e39562dd09f5f99e118958116c494e1567e",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "Mocker",
+        "repositoryURL": "https://github.com/WeTransfer/Mocker",
+        "state": {
+          "branch": null,
+          "revision": "c7cc3c9a4c086dc952bef6a1a16b60e1e2820f1b",
+          "version": "2.1.0"
+        }
+      },
+      {
         "package": "ObjectMapper",
         "repositoryURL": "https://github.com/tristanhimmelman/ObjectMapper.git",
         "state": {

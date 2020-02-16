@@ -20,14 +20,16 @@
 		712E412F23E8BE520057887C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 712E412E23E8BE520057887C /* Alamofire */; };
 		712E413223E8BE5C0057887C /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 712E413123E8BE5C0057887C /* SwiftyJSON */; };
 		712E413423E8E4260057887C /* ArrayContextMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E413323E8E4250057887C /* ArrayContextMock.swift */; };
+		7140BEB823F361C700DE28A7 /* AlamofireExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 7140BEB723F361C700DE28A7 /* AlamofireExtended */; };
 		715B830123F09A15005567A8 /* Restorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B830023F09A15005567A8 /* Restorable.swift */; };
-		715B830323F20EE7005567A8 /* MultipartFormDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B830223F20EE7005567A8 /* MultipartFormDataResult.swift */; };
 		7182B0C523EDB90D00E38D5C /* DataRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C123EDB90D00E38D5C /* DataRequestMock.swift */; };
 		7182B0C623EDB90D00E38D5C /* ResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C223EDB90D00E38D5C /* ResponseStore.swift */; };
 		7182B0C723EDB90D00E38D5C /* SessionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C323EDB90D00E38D5C /* SessionManagerMock.swift */; };
 		7182B0C823EDB90D00E38D5C /* DefaultResponseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C423EDB90D00E38D5C /* DefaultResponseStore.swift */; };
 		7182B0CA23EDBD6000E38D5C /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7182B0C923EDBD6000E38D5C /* FakeData.swift */; };
 		718D91BD23EC6B670023E047 /* FakeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718D91BC23EC6B670023E047 /* FakeError.swift */; };
+		71BED4DC23F5EA900099CF3E /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BED4DB23F5EA900099CF3E /* URLProtocolMock.swift */; };
+		71BED4DF23F5FAD00099CF3E /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 71BED4DE23F5FAD00099CF3E /* Mocker */; };
 		71C16AA123EFC54100E7D57F /* Trackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C16AA023EFC54100E7D57F /* Trackable.swift */; };
 		71C16AA323EFC55600E7D57F /* ObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C16AA223EFC55600E7D57F /* ObjectContext.swift */; };
 		71C16AA623EFC5B600E7D57F /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C16AA523EFC5B600E7D57F /* Copyable.swift */; };
@@ -37,8 +39,6 @@
 		71C70AA523EB17AE00F9155A /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 71C70AA423EB17AE00F9155A /* ObjectMapper */; };
 		71C70AA723EB24E700F9155A /* ISODateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AA623EB24E700F9155A /* ISODateTransform.swift */; };
 		71C70AB423EB7AEB00F9155A /* ArrayContextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AB323EB7AEB00F9155A /* ArrayContextTests.swift */; };
-		71C70AC123EB892A00F9155A /* SessionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70ABF23EB854500F9155A /* SessionManagerProtocol.swift */; };
-		71C70AC223EB896900F9155A /* DataRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C70AB523EB84F900F9155A /* DataRequestProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,13 +77,13 @@
 		712E412923E8BC990057887C /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		712E413323E8E4250057887C /* ArrayContextMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayContextMock.swift; sourceTree = "<group>"; };
 		715B830023F09A15005567A8 /* Restorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restorable.swift; sourceTree = "<group>"; };
-		715B830223F20EE7005567A8 /* MultipartFormDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormDataResult.swift; sourceTree = "<group>"; };
 		7182B0C123EDB90D00E38D5C /* DataRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataRequestMock.swift; sourceTree = "<group>"; };
 		7182B0C223EDB90D00E38D5C /* ResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStore.swift; sourceTree = "<group>"; };
 		7182B0C323EDB90D00E38D5C /* SessionManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManagerMock.swift; sourceTree = "<group>"; };
 		7182B0C423EDB90D00E38D5C /* DefaultResponseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultResponseStore.swift; sourceTree = "<group>"; };
 		7182B0C923EDBD6000E38D5C /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 		718D91BC23EC6B670023E047 /* FakeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeError.swift; sourceTree = "<group>"; };
+		71BED4DB23F5EA900099CF3E /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		71C16AA023EFC54100E7D57F /* Trackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trackable.swift; sourceTree = "<group>"; };
 		71C16AA223EFC55600E7D57F /* ObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectContext.swift; sourceTree = "<group>"; };
 		71C16AA523EFC5B600E7D57F /* Copyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
@@ -92,8 +92,6 @@
 		71C16AAB23EFC9A800E7D57F /* DepartmentResourceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentResourceMock.swift; sourceTree = "<group>"; };
 		71C70AA623EB24E700F9155A /* ISODateTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISODateTransform.swift; sourceTree = "<group>"; };
 		71C70AB323EB7AEB00F9155A /* ArrayContextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayContextTests.swift; sourceTree = "<group>"; };
-		71C70AB523EB84F900F9155A /* DataRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequestProtocol.swift; sourceTree = "<group>"; };
-		71C70ABF23EB854500F9155A /* SessionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +99,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BED4DF23F5FAD00099CF3E /* Mocker in Frameworks */,
 				71C70AA523EB17AE00F9155A /* ObjectMapper in Frameworks */,
 				712E413223E8BE5C0057887C /* SwiftyJSON in Frameworks */,
+				7140BEB823F361C700DE28A7 /* AlamofireExtended in Frameworks */,
 				712E412F23E8BE520057887C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				7182B0C023EDB87A00E38D5C /* Mocks */,
-				71C16AA423EFC57200E7D57F /* Alamofire Extensions */,
 				71C16A9F23EFC53300E7D57F /* Contexts */,
 				712E412823E8BC880057887C /* Models */,
 				712E412523E8B8590057887C /* Tasks */,
@@ -234,21 +233,12 @@
 			path = Contexts;
 			sourceTree = "<group>";
 		};
-		71C16AA423EFC57200E7D57F /* Alamofire Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				71C70AB523EB84F900F9155A /* DataRequestProtocol.swift */,
-				71C70ABF23EB854500F9155A /* SessionManagerProtocol.swift */,
-				715B830223F20EE7005567A8 /* MultipartFormDataResult.swift */,
-			);
-			path = "Alamofire Extensions";
-			sourceTree = "<group>";
-		};
 		71C70AAC23EB74BD00F9155A /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
 				718D91BC23EC6B670023E047 /* FakeError.swift */,
 				71C16AAB23EFC9A800E7D57F /* DepartmentResourceMock.swift */,
+				71BED4DB23F5EA900099CF3E /* URLProtocolMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -273,6 +263,8 @@
 				712E412E23E8BE520057887C /* Alamofire */,
 				712E413123E8BE5C0057887C /* SwiftyJSON */,
 				71C70AA423EB17AE00F9155A /* ObjectMapper */,
+				7140BEB723F361C700DE28A7 /* AlamofireExtended */,
+				71BED4DE23F5FAD00099CF3E /* Mocker */,
 			);
 			productName = AdventureWorks;
 			productReference = 712E40EF23E8B74A0057887C /* AdventureWorks.app */;
@@ -350,6 +342,8 @@
 				712E412D23E8BE520057887C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				712E413023E8BE5C0057887C /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				71C70AA323EB17AE00F9155A /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				7140BEB623F361C700DE28A7 /* XCRemoteSwiftPackageReference "AlamofireExtended" */,
+				71BED4DD23F5FAD00099CF3E /* XCRemoteSwiftPackageReference "Mocker" */,
 			);
 			productRefGroup = 712E40F023E8B74A0057887C /* Products */;
 			projectDirPath = "";
@@ -394,14 +388,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71C70AC123EB892A00F9155A /* SessionManagerProtocol.swift in Sources */,
 				715B830123F09A15005567A8 /* Restorable.swift in Sources */,
 				712E40F323E8B74A0057887C /* AppDelegate.swift in Sources */,
 				712E40F823E8B74A0057887C /* AdventureWorks.xcdatamodeld in Sources */,
 				7182B0C523EDB90D00E38D5C /* DataRequestMock.swift in Sources */,
 				71C16AA623EFC5B600E7D57F /* Copyable.swift in Sources */,
 				71C16AA823EFC5D900E7D57F /* ResourceConvertible.swift in Sources */,
-				715B830323F20EE7005567A8 /* MultipartFormDataResult.swift in Sources */,
 				7182B0C723EDB90D00E38D5C /* SessionManagerMock.swift in Sources */,
 				712E412723E8B88D0057887C /* ArrayContext.swift in Sources */,
 				7182B0CA23EDBD6000E38D5C /* FakeData.swift in Sources */,
@@ -413,7 +405,6 @@
 				71C16AA123EFC54100E7D57F /* Trackable.swift in Sources */,
 				71C70AA723EB24E700F9155A /* ISODateTransform.swift in Sources */,
 				712E412A23E8BC990057887C /* Department.swift in Sources */,
-				71C70AC223EB896900F9155A /* DataRequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				712E413423E8E4260057887C /* ArrayContextMock.swift in Sources */,
+				71BED4DC23F5EA900099CF3E /* URLProtocolMock.swift in Sources */,
 				718D91BD23EC6B670023E047 /* FakeError.swift in Sources */,
 				71C16AAA23EFC99300E7D57F /* ObjectContextTests.swift in Sources */,
 				71C16AAC23EFC9A800E7D57F /* DepartmentResourceMock.swift in Sources */,
@@ -754,6 +746,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		7140BEB623F361C700DE28A7 /* XCRemoteSwiftPackageReference "AlamofireExtended" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moros/AlamofireExtended.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		71BED4DD23F5FAD00099CF3E /* XCRemoteSwiftPackageReference "Mocker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WeTransfer/Mocker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 		71C70AA323EB17AE00F9155A /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
@@ -774,6 +782,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 712E413023E8BE5C0057887C /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		7140BEB723F361C700DE28A7 /* AlamofireExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7140BEB623F361C700DE28A7 /* XCRemoteSwiftPackageReference "AlamofireExtended" */;
+			productName = AlamofireExtended;
+		};
+		71BED4DE23F5FAD00099CF3E /* Mocker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71BED4DD23F5FAD00099CF3E /* XCRemoteSwiftPackageReference "Mocker" */;
+			productName = Mocker;
 		};
 		71C70AA423EB17AE00F9155A /* ObjectMapper */ = {
 			isa = XCSwiftPackageProductDependency;

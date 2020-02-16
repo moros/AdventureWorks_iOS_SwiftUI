@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireExtended
 
 // Should be in tests target but being used for demo purposes so server responses can be mocked
 // when demo app is run!

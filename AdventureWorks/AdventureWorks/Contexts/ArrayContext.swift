@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireExtended
 import Combine
 import SwiftUI
 import SwiftyJSON
@@ -31,7 +32,7 @@ class ArrayContext<Resource, Item>: ObservableObject where Item : Equatable, Ite
     // maybe makes more sense to be a requestable type
     // thinking it'll be less likely to need subclassing to allow for
     // polymorphic results.
-    func loadData(withParameters parameters: Parameters? = nil)
+    func loadData(withParameters parameters: Parameters?, onCompletion: @escaping (([Item]) -> Void))
     {
         guard let klass = Resource.self as? ResourceConvertible<Item>.Type else {
             print("Error grabbing class type for Requestable<Item>.")
@@ -58,6 +59,7 @@ class ArrayContext<Resource, Item>: ObservableObject where Item : Equatable, Ite
                     break
                 }
                 self.array = items
+                onCompletion(items)
             case .failure(let error):
                 print(error)
                 break

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AlamofireExtended
 
 struct ContentView: View {
     var body: some View {
@@ -37,7 +38,8 @@ struct DepartmentsView: View {
     init(context: ArrayContext<DepartmentResource, Department> = ArrayContext<DepartmentResource, Department>())
     {
         self.context = context
-        self.context.loadData()
+        self.context.loadData(withParameters: nil) { items in
+        }
     }
     
     var body: some View {
